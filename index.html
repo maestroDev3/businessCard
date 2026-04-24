@@ -225,50 +225,6 @@
       color: var(--gold);
     }
 
-    /* ── QR ── */
-    .qr-wrap {
-      margin-top: 1.5rem;
-      text-align: center;
-      animation: up 0.65s cubic-bezier(.22,.68,0,1.2) both;
-      animation-delay: 0.46s;
-    }
-
-    .qr-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.63rem;
-      font-family: 'Syne', sans-serif;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 0.3rem 0.8rem;
-      background: none;
-      cursor: pointer;
-      transition: border-color 0.22s, color 0.22s;
-    }
-
-    .qr-toggle:hover { border-color: var(--border-gold); color: var(--gold); }
-
-    .qr-box {
-      display: none;
-      margin-top: 1rem;
-      justify-content: center;
-    }
-
-    .qr-box.open { display: flex; }
-
-    .qr-img {
-      border-radius: 14px;
-      border: 1px solid var(--border-gold);
-      padding: 10px;
-      background: #1a0e05;
-      width: 180px;
-      height: 180px;
-    }
-
     /* ── Footer ── */
     .footer {
       margin-top: 1.25rem;
@@ -413,16 +369,6 @@
 
   </nav>
 
-  <div class="qr-wrap">
-    <button class="qr-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM17 17h3v3h-3zM14 20h3"/></svg>
-      QR-Code
-    </button>
-    <div class="qr-box">
-      <img id="qr" class="qr-img" alt="QR Code" />
-    </div>
-  </div>
-
   <footer class="footer">
     <div class="nfc">
       <span class="dot"></span>
@@ -431,16 +377,6 @@
   </footer>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-<script>
-QRCode.toDataURL('https://maestrodev3.github.io/businessCard/', {
-  width: 180,
-  margin: 1,
-  color: { dark: '#bc9626', light: '#1a0e05' }
-}, function(err, url) {
-  if (!err) document.getElementById('qr').src = url;
-});
-</script>
 <script>
 (function () {
   const canvas = document.getElementById('roots');
